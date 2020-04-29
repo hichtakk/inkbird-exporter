@@ -1,0 +1,30 @@
+[[package]]
+category = "main"
+description = "Python module for interfacing with BLE devices through Bluez"
+name = "bluepy"
+optional = false
+python-versions = "*"
+version = "1.3.0"
+
+[[package]]
+category = "main"
+description = "Python client for the Prometheus monitoring system."
+name = "prometheus-client"
+optional = false
+python-versions = "*"
+version = "0.7.1"
+
+[package.extras]
+twisted = ["twisted"]
+
+[metadata]
+content-hash = "d141adf830d45e1c0d2786f5b2fc184637ba6276debc6262bec0859427925706"
+python-versions = "^3.6"
+
+[metadata.files]
+bluepy = [
+    {file = "bluepy-1.3.0.tar.gz", hash = "sha256:2a71edafe103565fb990256ff3624c1653036a837dfc90e1e32b839f83971cec"},
+]
+prometheus-client = [
+    {file = "prometheus_client-0.7.1.tar.gz", hash = "sha256:71cd24a2b3eb335cb800c7159f423df1bd4dcd5171b234be15e3f31ec9f622da"},
+]
