@@ -1,8 +1,7 @@
 inkbird-exporter
 ================
 
-[![container repository](https://img.shields.io/badge/docker-0.1.0-blue)]
-(https://hub.docker.com/r/hichtakk/inkbird-exporter)  
+[![container repository](https://img.shields.io/badge/docker-0.1.0-blue)](https://hub.docker.com/r/hichtakk/inkbird-exporter)  
 
 Prometheus exporter for Inkbird IBS-TH1 Bluetooth LE temperature and humidity sensor.  
 https://www.ink-bird.com/products-smart-sensor.html
