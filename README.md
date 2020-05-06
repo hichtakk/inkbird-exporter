@@ -12,7 +12,7 @@ https://www.ink-bird.com/products-smart-sensor.html
 To access hci from docker container, `--net=host` and `--privileged` options are required.
 
 ```
-$ docker run -d --net=host --privileged -e INKBIRD_DEVICE=XX:XX:XX:XX:XX:XX inkbird-exporter:0.1.0
+$ docker run -d --net=host --privileged -e INKBIRD_DEVICE=XX:XX:XX:XX:XX:XX hichtakk/inkbird-exporter:0.1.0
 ```
 
 inkbird-exporter reports temperature and humidity at that time.
