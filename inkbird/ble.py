@@ -7,14 +7,15 @@ RETRY = 3
 
 class InkbirdReader(object):
 
-    def __init__(self, device):
+    def __init__(self, device, handle):
         self.device = device
+        self.handle = handle
 
     def read(self, retry):
         (temperature, humidity) = (None, None)
         try:
             peripheral = Peripheral(self.device, addrType=ADDR_TYPE_PUBLIC)
-            characteristic = peripheral.readCharacteristic(HANDLE)
+            characteristic = peripheral.readCharacteristic(self.handle)
             temperature = self.read_temperature(characteristic)
             humidity = self.read_humidity(characteristic)
         except BTLEDisconnectError as e:

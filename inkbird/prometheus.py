@@ -16,6 +16,7 @@ parser.add_argument("device",  help="mac address of peripheral device")
 parser.add_argument("-p", "--port",  type=int, default=18000, help="server listen port")
 parser.add_argument("-i", "--interval",  type=int, default=60, help="read interval in second")
 parser.add_argument("--timeout",  type=int, default=10, help="read interval in second")
+parser.add_argument("--handle",  help="handle value to read characteristic", default=0x002d)
 
 TEMPERATURE = Gauge("inkbird_temperature", "current temperature", ["device"])
 HUMIDITY = Gauge("inkbird_humidity", "current humidity", ["device"])
@@ -29,7 +30,7 @@ def set_value(device, temperature, humidity):
 def run_exporter():
     args = parser.parse_args()
     start_http_server(args.port)
-    inkbird = InkbirdReader(args.device)
+    inkbird = InkbirdReader(args.device, int(args.handle, 16))
     while True:
         (temperature, humidity) = inkbird.read(0)
         if temperature is not None:
