@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: inkbird
+  name: inkbird
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inkbird
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: inkbird
+    spec:
+      hostNetwork: true
+      containers:
+      - image: hichtakk/inkbird-exporter:0.1.0
+        name: inkbird-exporter
+        securityContext:
+          privileged: true
+        env:
+        - name: INKBIRD_DEVICE
+          value: F8:30:02:FF:45:3F
+        - name: PORT
+          value: 18000
